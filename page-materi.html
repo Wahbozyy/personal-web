@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visualisasi Data untuk Pengambilan Keputusan</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9', // Sky Blue
+                            900: '#0c4a6e', // Dark Navy
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-50 text-slate-800 font-sans leading-relaxed selection:bg-brand-100 selection:text-brand-900">
+
+    <nav class="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div class="max-w-4xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="font-bold text-xl text-brand-900 flex items-center gap-2">
+                <i class="fas fa-chart-pie text-brand-500"></i> DataViz Guide
+            </div>
+            <div class="text-sm text-gray-500">Materi Pembelajaran</div>
+        </div>
+    </nav>
+
+    <header class="bg-brand-900 text-white py-16">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <span class="inline-block px-3 py-1 bg-brand-500/20 text-brand-100 rounded-full text-xs font-semibold tracking-wider mb-4 border border-brand-500/50 uppercase">Business Intelligence</span>
+            <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">Visualisasi Data untuk <br> Pengambilan Keputusan</h1>
+            <p class="text-xl text-brand-100 max-w-2xl mx-auto font-light">
+                Seni dan sains menerjemahkan data mentah menjadi wawasan visual yang memicu tindakan nyata.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6 py-12 space-y-16">
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4 border-l-4 border-brand-500 pl-4">Mengapa Visualisasi Data Vital?</h2>
+            <p class="mb-6 text-lg">
+                Otak manusia memproses gambar <strong>60.000 kali lebih cepat</strong> daripada teks. Visualisasi bukan sekadar grafik indah, tapi alat komunikasi strategis.
+            </p>
+            <div class="grid md:grid-cols-2 gap-4">
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-brand-500 transition">
+                    <h3 class="font-bold text-brand-900 mb-2"><i class="fas fa-arrow-trend-up mr-2 text-brand-500"></i> Identifikasi Tren</h3>
+                    <p class="text-sm text-gray-600">Melihat pola kenaikan atau penurunan kinerja dari waktu ke waktu dengan cepat.</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-brand-500 transition">
+                    <h3 class="font-bold text-brand-900 mb-2"><i class="fas fa-exclamation-circle mr-2 text-red-500"></i> Deteksi Anomali</h3>
+                    <p class="text-sm text-gray-600">Menemukan outlier (pencilan) yang menandakan masalah atau peluang baru.</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-brand-500 transition">
+                    <h3 class="font-bold text-brand-900 mb-2"><i class="fas fa-compress-arrows-alt mr-2 text-brand-500"></i> Penyederhanaan</h3>
+                    <p class="text-sm text-gray-600">Merangkum ribuan baris Excel menjadi satu dasbor yang mudah dibaca.</p>
+                </div>
+                <div class="bg-white p-5 rounded-lg shadow-sm border border-gray-100 hover:border-brand-500 transition">
+                    <h3 class="font-bold text-brand-900 mb-2"><i class="fas fa-bullhorn mr-2 text-brand-500"></i> Storytelling</h3>
+                    <p class="text-sm text-gray-600">Mengomunikasikan argumen yang persuasif kepada pemangku kepentingan.</p>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200">
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">1. Memilih Visualisasi yang Tepat</h2>
+            <p class="text-gray-600 mb-8">Jangan salah pilih grafik. Gunakan panduan taksonomi ini berdasarkan tujuannya:</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <h3 class="font-bold text-brand-900 uppercase text-sm tracking-wide">A. Perubahan Waktu (Tren)</h3>
+                    <div class="bg-white p-4 rounded border flex gap-4 items-start">
+                        <div class="bg-blue-50 p-3 rounded text-blue-600"><i class="fas fa-chart-line text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold">Line Chart</h4>
+                            <p class="text-sm text-gray-600">Terbaik untuk data kontinu (Contoh: Penjualan 5 tahun).</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded border flex gap-4 items-start">
+                        <div class="bg-blue-50 p-3 rounded text-blue-600"><i class="fas fa-chart-area text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold">Area Chart</h4>
+                            <p class="text-sm text-gray-600">Menekankan pada volume di bawah garis.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-bold text-brand-900 uppercase text-sm tracking-wide">B. Komparasi (Perbandingan)</h3>
+                    <div class="bg-white p-4 rounded border flex gap-4 items-start">
+                        <div class="bg-green-50 p-3 rounded text-green-600"><i class="fas fa-chart-bar text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold">Bar Chart (Horizontal)</h4>
+                            <p class="text-sm text-gray-600">Mudah dibaca. Gunakan jika nama kategori panjang.</p>
+                        </div>
+                    </div>
+                    <div class="bg-white p-4 rounded border flex gap-4 items-start">
+                        <div class="bg-green-50 p-3 rounded text-green-600"><i class="fas fa-chart-column text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold">Column Chart (Vertikal)</h4>
+                            <p class="text-sm text-gray-600">Bagus untuk jumlah kategori sedikit (< 7).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-bold text-brand-900 uppercase text-sm tracking-wide">C. Hubungan (Korelasi)</h3>
+                    <div class="bg-white p-4 rounded border flex gap-4 items-start">
+                        <div class="bg-purple-50 p-3 rounded text-purple-600"><i class="fas fa-braille text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold">Scatter Plot</h4>
+                            <p class="text-sm text-gray-600">Hubungan 2 variabel (misal: Biaya Iklan vs Penjualan).</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-4">
+                    <h3 class="font-bold text-brand-900 uppercase text-sm tracking-wide">D. Komposisi (Bagian)</h3>
+                    <div class="bg-white p-4 rounded border flex gap-4 items-start">
+                        <div class="bg-orange-50 p-3 rounded text-orange-600"><i class="fas fa-chart-pie text-2xl"></i></div>
+                        <div>
+                            <h4 class="font-bold">Pie / Donut Chart</h4>
+                            <p class="text-sm text-gray-600">Hanya untuk sedikit kategori (maks 3-4).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200">
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-2">2. Prinsip Desain (Data-Ink Ratio)</h2>
+            <p class="text-gray-600 mb-6">Konsep dari Edward Tufte: Hapus semua tinta yang tidak menyampaikan informasi penting. Hapus <em>gridlines</em> tebal dan efek 3D.</p>
+
+            <div class="overflow-hidden rounded-lg border border-gray-200">
+                <table class="min-w-full bg-white text-sm text-left">
+                    <thead class="bg-gray-100 text-gray-900 uppercase font-bold">
+                        <tr>
+                            <th class="py-3 px-6">Elemen</th>
+                            <th class="py-3 px-6 text-red-600"><i class="fas fa-times-circle mr-1"></i> Hindari (Buruk)</th>
+                            <th class="py-3 px-6 text-green-600"><i class="fas fa-check-circle mr-1"></i> Lakukan (Baik)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Warna</td>
+                            <td class="py-4 px-6 text-gray-500">Warna pelangi acak</td>
+                            <td class="py-4 px-6">Warna strategis (Merah untuk 'Bahaya', Abu-abu untuk data sekunder)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Judul</td>
+                            <td class="py-4 px-6 text-gray-500">"Penjualan 2023"</td>
+                            <td class="py-4 px-6">"Penjualan 2023 Turun 10% di Q4 Akibat Masalah Stok" (Deskriptif)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Sumbu (Axis)</td>
+                            <td class="py-4 px-6 text-gray-500">Memulai sumbu Y dari angka acak</td>
+                            <td class="py-4 px-6">Selalu mulai sumbu Y dari 0 (untuk Bar Chart)</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-6 font-medium">Legenda</td>
+                            <td class="py-4 px-6 text-gray-500">Terpisah jauh dari grafik</td>
+                            <td class="py-4 px-6">Tempelkan label langsung di dekat garis/batang</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="bg-brand-50 rounded-2xl p-8 border border-brand-100">
+            <h2 class="text-2xl font-bold text-brand-900 mb-6">3. Kerangka Kerja: Data ke Keputusan</h2>
+            <div class="flex flex-col md:flex-row gap-6">
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="bg-brand-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">1</span>
+                        <h3 class="font-bold">Pertanyaan Bisnis</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Masalah apa yang ingin diselesaikan? Contoh: "Mengapa profit turun?"</p>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="bg-brand-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">2</span>
+                        <h3 class="font-bold">Siapkan Data</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Bersihkan data dari duplikasi atau format yang salah.</p>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="bg-brand-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">3</span>
+                        <h3 class="font-bold">Eksplorasi</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Buat grafik kasar untuk menemukan pola bagi diri sendiri.</p>
+                </div>
+                <div class="flex-1">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="bg-brand-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">4</span>
+                        <h3 class="font-bold">Penjelasan</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Desain ulang untuk orang lain. Fokuskan pada insight utama.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2 class="text-2xl font-bold text-gray-900 mb-4">4. Studi Kasus Penerapan</h2>
+            <div class="bg-white shadow-lg rounded-xl overflow-hidden border border-gray-100 flex flex-col md:flex-row">
+                <div class="bg-gray-800 text-white p-6 md:w-1/3 flex flex-col justify-center">
+                    <h3 class="text-lg font-bold mb-2">Skenario SDM</h3>
+                    <p class="text-gray-300 text-sm">Manajer ingin melaporkan tingkat karyawan keluar (turnover) yang tinggi.</p>
+                </div>
+                <div class="p-6 md:w-2/3">
+                    <div class="mb-4">
+                        <span class="bg-red-100 text-red-700 px-2 py-1 rounded text-xs font-bold mr-2">SALAH</span>
+                        <span class="text-gray-600 text-sm">Menampilkan tabel Excel berisi 500 nama karyawan.</span>
+                    </div>
+                    <div class="mb-4">
+                        <span class="bg-green-100 text-green-700 px-2 py-1 rounded text-xs font-bold mr-2">BENAR</span>
+                        <span class="text-gray-600 text-sm">Line Chart (Tren turnover 3 tahun) + Bar Chart (Alasan Keluar).</span>
+                    </div>
+                    <div class="bg-brand-50 p-4 rounded border-l-4 border-brand-500">
+                        <p class="font-bold text-brand-900 text-sm">Kesimpulan Visual:</p>
+                        <p class="text-brand-800 italic">"Turnover naik 20% tahun ini, didominasi oleh masalah kompensasi (Gaji)."</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <hr class="border-gray-200">
+
+        <section class="mb-20">
+            <h2 class="text-2xl font-bold text-gray-900 mb-6">5. Tools Populer</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-md transition">
+                    <div class="text-green-600 text-4xl mb-4"><i class="fas fa-file-excel"></i></div>
+                    <h3 class="font-bold mb-2">Microsoft Excel</h3>
+                    <p class="text-sm text-gray-500">Level: Pemula/Menengah</p>
+                    <p class="text-xs text-gray-400 mt-2">Sangat powerful jika tahu cara membersihkan tampilan grafiknya.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-md transition">
+                    <div class="text-yellow-500 text-4xl mb-4"><i class="fas fa-chart-simple"></i></div>
+                    <h3 class="font-bold mb-2">Power BI / Tableau</h3>
+                    <p class="text-sm text-gray-500">Level: Business Intelligence</p>
+                    <p class="text-xs text-gray-400 mt-2">Untuk dasbor interaktif dan data besar.</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl border border-gray-200 text-center hover:shadow-md transition">
+                    <div class="text-blue-600 text-4xl mb-4"><i class="fab fa-python"></i></div>
+                    <h3 class="font-bold mb-2">Python / R</h3>
+                    <p class="text-sm text-gray-500">Level: Advanced</p>
+                    <p class="text-xs text-gray-400 mt-2">Library Matplotlib, Seaborn, atau Ggplot2.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-gray-200 py-8 text-center text-sm text-gray-500">
+        <p>Materi Pembelajaran: Visualisasi Data &copy; 2025</p>
+    </footer>
+
+</body>
+</html>
